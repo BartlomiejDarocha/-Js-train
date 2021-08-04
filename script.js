@@ -7,7 +7,7 @@ let newNumber = 0;
 
 function rollNumber() {
   const min = 1;
-  const max = 5;
+  const max = 7;
   return Math.floor(Math.random() * (max - min)) + min
 }
 
@@ -36,9 +36,6 @@ function checkRolledNumbers() {
   }
   if (rolledNumbers.length < 6) {
     newNumber = rollNumber();
-    if (checkSameNumber()) {
-      newNumber = rollNumber()
-    } 
     rolledNumbers.push(newNumber);
     printDataValue = setDateLine();
   } else {
