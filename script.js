@@ -16,11 +16,8 @@ function showWarningEnd() {
 
 function setDateLine() {
   let tempLine = ''
-  rolledNumbers.forEach((number, index) => {
-    tempLine += ` ${number}`;
-    if ((index + 1) !== rolledNumbers.length) {
-      tempLine += `,`;
-    }
+  rolledNumbers.forEach((number) => {
+    tempLine += ` ${number},`;
   });
   return tempLine;
 }
