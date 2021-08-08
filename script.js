@@ -3,7 +3,6 @@ const container = document.querySelector('#container');
 const rolledNumbers = [];
 let printDataValue = '';
 let disabled = false;
-let newNumber = 0;
 
 function rollNumber() {
   const min = 1;
@@ -11,12 +10,14 @@ function rollNumber() {
   return Math.floor(Math.random() * (max - min)) + min
 }
 
-function showWarningEnd() {
-  return '<br> To jest 6 liczb wylosowanych';
+
+function checkSameNumbers() {
+  const rolledNumber = rollNumber(); 
+  if (rolledNumbers.some(number => rolledNumber === number)) {}
 }
 
-function checkSameNumber() {
-  return rolledNumbers.some(number => newNumber === number);
+function showWarningEnd() {
+  return '<br> To jest 6 liczb wylosowanych';
 }
 
 function setDateLine() {
@@ -30,12 +31,11 @@ function setDateLine() {
   return tempLine;
 }
 
-function checkRolledNumbers() {
+function checkRolledNumbersLength() {
   if (disabled) {
     return;
   }
   if (rolledNumbers.length < 6) {
-    newNumber = rollNumber();
     rolledNumbers.push(newNumber);
     printDataValue = setDateLine();
   } else {
@@ -45,4 +45,4 @@ function checkRolledNumbers() {
   container.innerHTML = printDataValue; 
 }
 
-button.addEventListener('click', checkRolledNumbers);
+button.addEventListener('click', checkRolledNumbersLength);
