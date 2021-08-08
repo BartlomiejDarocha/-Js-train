@@ -6,14 +6,25 @@ let disabled = false;
 
 function rollNumber() {
   const min = 1;
-  const max = 7;
+  const max = 3;
   return Math.floor(Math.random() * (max - min)) + min
 }
 
-
 function checkSameNumbers() {
-  const rolledNumber = rollNumber(); 
-  if (rolledNumbers.some(number => rolledNumber === number)) {}
+  const rolledNumber = rollNumber();
+  let newRoll = null; 
+  if (rolledNumbers.find(number => rolledNumber === number)) {
+    console.log('??/', rolledNumber);
+    let rollAgain = true
+    do {
+      newRoll = rollNumber();
+      console.log('newRoll', newRoll);
+      if (newRoll !==rolledNumber) {
+        rollAgain = false;
+      }
+    } while (rollAgain);
+  }
+  return newRoll ? newRoll : rolledNumber;
 }
 
 function showWarningEnd() {
@@ -36,7 +47,8 @@ function checkRolledNumbersLength() {
     return;
   }
   if (rolledNumbers.length < 6) {
-    rolledNumbers.push(newNumber);
+    const rollNumber = checkSameNumbers();
+    rolledNumbers.push(rollNumber);
     printDataValue = setDateLine();
   } else {
     printDataValue += showWarningEnd();
