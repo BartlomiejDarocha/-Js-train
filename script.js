@@ -55,6 +55,17 @@ function checkRolledNumbersLength() {
 
 button.addEventListener('click', checkRolledNumbersLength);
 
+const user = {
+  name: 'bartek',
+  surname: 'darocha',
+  hobbies: ['archery', 'bushcraft', 'cars']
+}
+
 consoleButton.addEventListener('click', () => {
   console.log(console);
+  console.dir(user, 'dir');
+  console.log(user, 'log');
+  console.log('---------------');
+  console.log(document, 'log');
+  console.dir(document, 'dir');
 })
