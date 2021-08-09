@@ -61,16 +61,28 @@ const user = {
   hobbies: ['archery', 'bushcraft', 'cars']
 }
 
-consoleButton.addEventListener('click', () => {
-  console.log(console);
-  console.dir(user, 'dir');
-  console.log(user, 'log');
-  console.log('---------------');
-  console.log(document.body, 'log');
-  console.dir(document.body, 'dir różnice widać w chrome');
-  console.log('-------------');
-  user.hobbies.forEach(() => {
-    console.count('hobbies');
+function testTime(arr) {
+  console.time()
+  const newArray = arr.map((a) => {
+    console.timeLog();
+    return a * a;
   });
-  console.log('-------------');
+  console.timeEnd();
+} 
+
+consoleButton.addEventListener('click', () => {
+  // console.log(console);
+  // console.dir(user, 'dir');
+  // console.log(user, 'log');
+  // console.log('---------------');
+  // console.log(document.body, 'log');
+  // console.dir(document.body, 'dir różnice widać w chrome');
+  // console.log('-------------');
+  // user.hobbies.forEach(() => {
+  //   console.count('hobbies');
+  // });
+  // console.log('-------------');
+  // console.assert(user.name === 'Tomek', 'user.name to nie tomek');
+  // console.table(user);
+  testTime([1,2,3]);
 })
