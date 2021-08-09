@@ -1,5 +1,6 @@
 const button = document.querySelector('#button');
-const container = document.querySelector('#container'); 
+const container = document.querySelector('#container');
+const consoleButton = document.querySelector('#console');
 const rolledNumbers = [];
 let printDataValue = '';
 let disabled = false;
@@ -53,3 +54,7 @@ function checkRolledNumbersLength() {
 }
 
 button.addEventListener('click', checkRolledNumbersLength);
+
+consoleButton.addEventListener('click', () => {
+  console.log(console);
+})
