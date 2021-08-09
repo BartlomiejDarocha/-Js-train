@@ -66,6 +66,11 @@ consoleButton.addEventListener('click', () => {
   console.dir(user, 'dir');
   console.log(user, 'log');
   console.log('---------------');
-  console.log(document, 'log');
-  console.dir(document, 'dir');
+  console.log(document.body, 'log');
+  console.dir(document.body, 'dir różnice widać w chrome');
+  console.log('-------------');
+  user.hobbies.forEach(() => {
+    console.count('hobbies');
+  });
+  console.log('-------------');
 })
