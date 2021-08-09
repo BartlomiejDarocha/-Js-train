@@ -62,13 +62,20 @@ const user = {
 }
 
 function testTime(arr) {
-  console.time()
+  console.time('test')
   const newArray = arr.map((a) => {
-    console.timeLog();
+    console.timeLog('test');
     return a * a;
   });
-  console.timeEnd();
-} 
+  console.timeEnd('test');
+  return newArray;
+}
+function paretn() {
+  function child() {
+    console.trace('im here');
+  }
+  child();
+}
 
 consoleButton.addEventListener('click', () => {
   // console.log(console);
@@ -84,5 +91,28 @@ consoleButton.addEventListener('click', () => {
   // console.log('-------------');
   // console.assert(user.name === 'Tomek', 'user.name to nie tomek');
   // console.table(user);
-  testTime([1,2,3]);
+  // testTime([1,2,3,4]);
+  // paretn();
+  // console.group('main');
+  //   console.log('coś 1');
+  //   console.log('coś 2');
+  //   console.log('coś 3');
+  // console.groupEnd();
+
+  // console.groupCollapsed('main');
+  //   console.log('coś 1');
+  //   console.log('coś 2');
+  //   console.log('coś 3');
+  // console.groupEnd();
+
+  console.groupCollapsed('main');
+    console.log('coś 1');
+    console.log('coś 2');
+    console.log('coś 3');
+    console.groupCollapsed('sec');
+      console.log('sec 1');
+      console.log('sec 2');
+      console.log('sec 3');
+    console.groupEnd();
+  console.groupEnd();
 })
